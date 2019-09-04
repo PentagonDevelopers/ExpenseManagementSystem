@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>This is a particular user Expense</h1>
+
+{% for expense in expense_data %}
+    <h3>{{ expense.id }}</h3>
+    <h3>{{ expense.expense_for }}</h3>
+    <h3>{{ expense.amount }}</h3>
+    <h3>{{ expense.description }}</h3>
+    <h3>{{ expense.date_of_expense }}</h3>
+    <h3>-----------------------------</h3>
+{% endfor %}
+
+
+</body>
+</html>

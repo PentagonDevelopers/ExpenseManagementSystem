@@ -1,0 +1,34 @@
+{% extends 'users/base.html' %}
+
+
+{% block content %}
+
+    <table class="table">
+        <tr class="tab-content">
+            <th>Expense For</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date of Expense</th>
+            <th>Done By</th>
+        </tr>
+        {% for expense in data %}
+            <tr class="table-success">
+                <td>{{ expense.expense_for }}</td>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.date_of_expense |date:"F d, Y"}}</td>
+                <td>{{ expense.by_whom }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}
+
+{% block amount %}
+    {{ total_amount }}
+{% endblock amount %}
+
+{% block monthly_amount %}
+    {{ monthly_amount }}
+{% endblock monthly_amount %}
